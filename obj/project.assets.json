@@ -1,11 +1,57 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "NLog/4.7.11": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NLog.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "NLog/4.7.11": {
+      "sha512": "A7EpoOjWesV5BPx1cOiBndazZq1VGdagIs6oK8ttcRDl5adCMtHiTqnsD5yYaOrMxOQeCjHBf/w3nKzCmhGbgw==",
+      "type": "package",
+      "path": "nlog/4.7.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid44/NLog.dll",
+        "lib/monoandroid44/NLog.xml",
+        "lib/net35/NLog.dll",
+        "lib/net35/NLog.xml",
+        "lib/net40-client/NLog.dll",
+        "lib/net40-client/NLog.xml",
+        "lib/net45/NLog.dll",
+        "lib/net45/NLog.xml",
+        "lib/netstandard1.3/NLog.dll",
+        "lib/netstandard1.3/NLog.xml",
+        "lib/netstandard1.5/NLog.dll",
+        "lib/netstandard1.5/NLog.xml",
+        "lib/netstandard2.0/NLog.dll",
+        "lib/netstandard2.0/NLog.xml",
+        "lib/sl4/NLog.dll",
+        "lib/sl4/NLog.xml",
+        "lib/sl5/NLog.dll",
+        "lib/sl5/NLog.xml",
+        "lib/wp8/NLog.dll",
+        "lib/wp8/NLog.xml",
+        "lib/xamarinios10/NLog.dll",
+        "lib/xamarinios10/NLog.xml",
+        "nlog.4.7.11.nupkg.sha512",
+        "nlog.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "NLog >= 4.7.11"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\yeeyi\\.nuget\\packages\\": {}
@@ -13,11 +59,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Work\\TechSwitch\\C#\\SupportBank\\SupportBank.csproj",
+      "projectUniqueName": "c:\\Work\\TechSwitch\\C#\\SupportBank\\SupportBank.csproj",
       "projectName": "SupportBank",
-      "projectPath": "C:\\Work\\TechSwitch\\C#\\SupportBank\\SupportBank.csproj",
+      "projectPath": "c:\\Work\\TechSwitch\\C#\\SupportBank\\SupportBank.csproj",
       "packagesPath": "C:\\Users\\yeeyi\\.nuget\\packages\\",
-      "outputPath": "C:\\Work\\TechSwitch\\C#\\SupportBank\\obj\\",
+      "outputPath": "c:\\Work\\TechSwitch\\C#\\SupportBank\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\yeeyi\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,6 +89,12 @@
     "frameworks": {
       "net5.0": {
         "targetAlias": "net5.0",
+        "dependencies": {
+          "NLog": {
+            "target": "Package",
+            "version": "[4.7.11, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

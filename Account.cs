@@ -7,9 +7,9 @@ namespace SupportBank
     {
         public string Name { get; set; }
 
-        public decimal owe { get; set; }
-
-        public decimal amountOwed { get; set; }
+        public decimal Owe { get; set; }
+        public decimal AmountOwed { get; set; }
+         public decimal Balance { get; set; }
         public List<Transaction> IncomingTransactions { get; set; }
         public List<Transaction> OutgoingTransactions { get; set; }
 

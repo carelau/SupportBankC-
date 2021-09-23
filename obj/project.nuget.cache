@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "kxV29rRhMtIKuO1a4Cn+igbWimUbLRUTy5BfrAPskgHWJRyJ4jPE/ibC1zyH46SNkCAxpMjYuFWLUs2+v6zPTA==",
+  "dgSpecHash": "vCAu1UIQN6b7s1jXIcswheW7C7OXmtlSd3U8u2gyqbm0jVQiPfhZa2NQPFcz3FV9Tuuyvvp8uH7W6FxdWo+EUw==",
   "success": true,
   "projectFilePath": "C:\\Work\\TechSwitch\\C#\\SupportBank\\SupportBank.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\yeeyi\\.nuget\\packages\\nlog\\4.7.11\\nlog.4.7.11.nupkg.sha512"
+  ],
   "logs": []
 }
