@@ -1,0 +1,16 @@
+C:\Work\TechSwitch\C#\SupportBank\obj\Debug\net5.0\SupportBank.csproj.AssemblyReference.cache
+C:\Work\TechSwitch\C#\SupportBank\obj\Debug\net5.0\SupportBank.GeneratedMSBuildEditorConfig.editorconfig
+C:\Work\TechSwitch\C#\SupportBank\obj\Debug\net5.0\SupportBank.AssemblyInfoInputs.cache
+C:\Work\TechSwitch\C#\SupportBank\obj\Debug\net5.0\SupportBank.AssemblyInfo.cs
+C:\Work\TechSwitch\C#\SupportBank\obj\Debug\net5.0\SupportBank.csproj.CoreCompileInputs.cache
+C:\Work\TechSwitch\C#\SupportBank\bin\Debug\net5.0\SupportBank.exe
+C:\Work\TechSwitch\C#\SupportBank\bin\Debug\net5.0\SupportBank.deps.json
+C:\Work\TechSwitch\C#\SupportBank\bin\Debug\net5.0\SupportBank.runtimeconfig.json
+C:\Work\TechSwitch\C#\SupportBank\bin\Debug\net5.0\SupportBank.runtimeconfig.dev.json
+C:\Work\TechSwitch\C#\SupportBank\bin\Debug\net5.0\SupportBank.dll
+C:\Work\TechSwitch\C#\SupportBank\bin\Debug\net5.0\ref\SupportBank.dll
+C:\Work\TechSwitch\C#\SupportBank\bin\Debug\net5.0\SupportBank.pdb
+C:\Work\TechSwitch\C#\SupportBank\obj\Debug\net5.0\SupportBank.dll
+C:\Work\TechSwitch\C#\SupportBank\obj\Debug\net5.0\ref\SupportBank.dll
+C:\Work\TechSwitch\C#\SupportBank\obj\Debug\net5.0\SupportBank.pdb
+C:\Work\TechSwitch\C#\SupportBank\obj\Debug\net5.0\SupportBank.genruntimeconfig.cache
