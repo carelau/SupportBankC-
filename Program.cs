@@ -2,14 +2,26 @@
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
+using NLog;
+using NLog.Config;
+using NLog.Targets;
 
 namespace SupportBank
 {
     class Program
     {
+        private static readonly ILogger Logger = LogManager.GetCurrentClassLogger();
         static void Main(string[] args)
         {
-            string path = @"C:\Work\TechSwitch\C#\SupportBank\Transactions2014.csv";
+            var config = new LoggingConfiguration();
+            var target = new FileTarget { FileName = @"C:\Work\TechSwitch\C#\Logging.log", Layout = @"${longdate} ${level} - ${logger}: ${message}" };
+            config.AddTarget("File Logger", target);
+            config.LoggingRules.Add(new LoggingRule("*", LogLevel.Debug, target));
+            LogManager.Configuration = config;
+            
+
+            string path = @"C:\Work\TechSwitch\C#\SupportBank\DodgyTransactions2015.csv";
+
             Reader fileReader = new Reader();
             List<Transaction> transactionList = fileReader.CreateTransactionList(path);
             List<string> repeatedNames = new List<string>();
@@ -17,19 +29,23 @@ namespace SupportBank
             List<string> uniqueNames = CreateUniqueNameList(repeatedNames, transactionList);
             List<Account> accountList = CreateAccountList(uniqueNames, transactionList);
 
-            Console.WriteLine("What information would you like? Please select a number \n 1. List All 2. List Account");
-            int userInput = int.Parse(Console.ReadLine());
+            ValidateUserInput(accountList);
 
-            if (userInput == 1)
-            {
-                ListAll(accountList);
-            }
-            else if (userInput == 2)
-            {
-                Console.WriteLine("Enter the name for account details: ");
-                string nameInput = Console.ReadLine();
-                ListAccount(accountList, nameInput);
-            }
+
+            /*  Console.WriteLine("What information would you like? Please select a number \n 1. List All 2. List Account");
+              int userInput = int.Parse(Console.ReadLine());
+
+              if (userInput == 1)
+              {
+                  ListAll(accountList);
+              }
+              else if (userInput == 2)
+              {
+                  Console.WriteLine("Enter the name for account details: ");
+                  string nameInput = Console.ReadLine();
+                  ListAccount(accountList, nameInput);
+              }
+              */
 
             /* foreach (string eachRow in rows)
             {
@@ -101,12 +117,46 @@ namespace SupportBank
             {
                 myDictionary.Add(eachAccount.Name, eachAccount);
             }
-            
+
             Console.WriteLine("All Incoming Transactions");
             myDictionary[nameInput].IncomingTransactions.ForEach(t => Console.WriteLine($"\n Date:{t.Date.ToShortDateString()} From:{t.From} Narrative: {t.Narrative} Amount:{t.Amount:C}"));
             Console.WriteLine();
             Console.WriteLine("All Outgoing Transactions");
             myDictionary[nameInput].OutgoingTransactions.ForEach(t => Console.WriteLine($"\n Date:{t.Date.ToShortDateString()} From:{t.To} Narrative: {t.Narrative} Amount:{t.Amount:C}"));
+        }
+
+        public static void ValidateUserInput(List<Account> accountList)
+        {
+            Console.WriteLine("What information would you like? Please select a number \n 1. List All 2. List Account");
+         
+            try
+            {   
+            int userInput = int.Parse(Console.ReadLine());
+                if (userInput == 1)
+                {
+                    ListAll(accountList);
+                }
+                else if (userInput == 2)
+                {
+                    Console.WriteLine("Enter the name for account details: ");
+                    string nameInput = Console.ReadLine();
+                    ListAccount(accountList, nameInput);
+                }
+                else
+                {
+                Console.WriteLine("you entered an invalid input! Please try again");
+                ValidateUserInput (accountList);
+                }
+            }
+
+            catch (Exception e)
+            {
+                Logger.Error("Invalid Input" +e);
+                Console.WriteLine("you entered an invalid input! Please try again");
+                ValidateUserInput (accountList);
+            }
+
+
         }
 
     }
